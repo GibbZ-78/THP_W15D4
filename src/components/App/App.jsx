@@ -20,11 +20,11 @@ function App() {
       </header>
       <main className="app-main">
         <div className="app-left-column">
-          <MarkDownHistory />
+          <MarkDownHistory sendUpwardTitleToOutputViaApp={setTitleParam} sendUpwardContentToOutputViaApp={setContentParam} />
         </div>
         <div className="app-right-column">
-          <MarkDownOutput textParam={appTextParam} funcParam=""/>
-          <MarkDownInput titleParam={appTitleParam} contentParam={appContentParam} funcParam={setTextParam} />
+          <MarkDownOutput textParam={appTextParam} />
+          <MarkDownInput titleParam={appTitleParam} contentParam={appContentParam} sendUpwardToOutputViaApp={setTextParam} />
         </div>
       </main>
       <footer className="app-footer">&copy; 2022 Jean-Baptiste VIDAL for THP Developer Winter'22</footer>

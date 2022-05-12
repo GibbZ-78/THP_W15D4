@@ -16,8 +16,13 @@ const HistoryNotes = (props) => {
     return (
     <div className="history-notes-container">
       {myNotes.map((myNote, myIndex) => {
+
+          const handleChooseHistoryNote = () => {
+            props.funcParam(myNote.title, myNote.content);
+          };
+
           return(
-            <div key={myIndex} className="history-note">
+            <div key={myIndex} className="history-note" onClick={handleChooseHistoryNote}>
               <div>
                 <p className="history-note-title">{myNote.title}</p>
               </div>

@@ -46,6 +46,8 @@ const MarkDownInput = (props) => {
 
     if (event.target.value !== null && event.target.value !== undefined) {
       setState({myTitle: event.target.value, myContent: myState.myContent});
+      let myTmpText = myState.myTitle+"\n\n"+myState.myContent;
+      props.sendUpwardToOutputViaApp(myTmpText);
     }
     console.log("MarkDownInput says:");
     console.log("  > Title changed to:");
@@ -58,8 +60,8 @@ const MarkDownInput = (props) => {
     
     if (event.target.value !== null && event.target.value !== undefined) { 
       setState({myContent: event.target.value, myTitle: myState.myTitle});
-      let myTmpText = myState.myTitle+"\n"+myState.myContent;
-      props.funcParam(myTmpText);
+      let myTmpText = myState.myTitle+"\n\n"+myState.myContent;
+      props.sendUpwardToOutputViaApp(myTmpText);
     }
     console.log("MarkDownInput says:");
     console.log("  > Content changed to:");

@@ -5,10 +5,15 @@ import HistoryNotes from 'components/HistoryNotes/HistoryNotes';
 
 const MarkDownHistory = (props) => {
 
+  const sendUpwardTitleAndContentToOutputViaApp = (myTmpTitle, myTmpContent) => {
+    props.sendUpwardTitleToOutputViaApp(myTmpTitle);
+    props.sendUpwardContentToOutputViaApp(myTmpContent);
+  };
+
   return (
     <div className="markdown-history-style">
       <NewButton label="New note" />
-      <HistoryNotes />
+      <HistoryNotes funcParam={sendUpwardTitleAndContentToOutputViaApp}/>
     </div>
   );
 
