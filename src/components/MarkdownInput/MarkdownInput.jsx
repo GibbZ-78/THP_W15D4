@@ -7,6 +7,7 @@ const MarkDownInput = (props) => {
   let myTmpContentParam = props.contentParam ? props.contentParam : "";
   const [myState, setState] = useState({myTitle: myTmpTitleParam, myContent: myTmpContentParam});
 
+  // Launch when "Save" button is pressed
   const handleSubmit = (event) => {
     
     event.preventDefault();
@@ -40,6 +41,7 @@ const MarkDownInput = (props) => {
 
   }
 
+  // Launched each time TITLE of the note changes
   const handleChangeTitle = (event) => {
     
     event.preventDefault();
@@ -54,6 +56,7 @@ const MarkDownInput = (props) => {
     console.log(myState.myTitle);
   }
 
+  // Launched each time CONTENT of the note changes
   const handleChangeContent = (event) => {
     
     event.preventDefault();
@@ -68,6 +71,7 @@ const MarkDownInput = (props) => {
     console.log(myState.myContent);
   }
 
+  // final return of the MarkdownInput component
   return (
     <div className="markdown-input-style">
       <form onSubmit={handleSubmit}>

@@ -13,14 +13,18 @@ const HistoryNotes = (props) => {
       return {__html: myHistoryNotesMDtoHTMLConverter.makeHtml(markdownContent)};
     };
 
+    // Final return of the HistoryNotes component when localStorage contains at least 1 note
     return (
     <div className="history-notes-container">
       {myNotes.map((myNote, myIndex) => {
 
+          // Hook-up function to transfer TITLE and CONTENT from HistoryNotes to MarkDownInput
           const handleChooseHistoryNote = () => {
-            props.funcParam(myNote.title, myNote.content);
+            console.log("  > History note '"+myNote.title+"("+myIndex+")' has been clicked. Launching 'upwardHookFunction'");
+            props.upwardHookFunction(myNote.title, myNote.content);
           };
 
+          // Final return of each mapped HistoryNote component within the HistoryNotes one
           return(
             <div key={myIndex} className="history-note" onClick={handleChooseHistoryNote}>
               <div>
@@ -35,6 +39,7 @@ const HistoryNotes = (props) => {
     </div>
     );
   } else {
+    // Final return of the HistoryNotes component when localStorage is empty
     return(
       <div className="history-note-not-found">
         <p>No history note found</p>

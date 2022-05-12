@@ -13,6 +13,7 @@ const MarkDownOutput = (props) => {
                        props.textParam : 
                        "# Examplary text\nThis is just a sample text with *italic* and other\ntext styles like **bold** or even lists:\n- Item 1\n- Item 2\n- Etc.\nbut also with [hyperlinks](https://devstory.net/12449/html-hyperlink).\n";
 
+  // Final return of the MardownOutput component  
   return (
     <div className="markdown-output-style" dangerouslySetInnerHTML={forceHTMLMarkup(myMarkdownText)}>
     </div>
