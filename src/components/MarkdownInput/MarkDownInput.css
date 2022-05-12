@@ -11,6 +11,8 @@
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-color: rgb(255,100,100) rgb(150,50,50);
+  scrollbar-width: thin;
 }
 
 .markdown-input-title {

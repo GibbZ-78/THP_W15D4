@@ -8,8 +8,6 @@ const MarkDownHistory = (props) => {
   // Hook-up function to make TITLE and CONTENT bubble-up
   const sendUpwardTitleAndContentToOutputViaApp = (myTmpTitle, myTmpContent) => {
     console.log("  > Launching 'sendUpwardTitleAndContentToOutputViaApp'");
-    console.log(`    > with myTmpTitle = ${myTmpTitle}`);
-    console.log(`    > and myTmpContent = ${myTmpContent}`);
     props.sendUpwardTitleToInputViaApp(myTmpTitle);
     props.sendUpwardContentToInputViaApp(myTmpContent);
   };
