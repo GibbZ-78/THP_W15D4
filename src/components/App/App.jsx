@@ -4,6 +4,7 @@ import './App.css';
 import MarkDownOutput from 'components/MarkdownOutput/MarkDownOutput';
 import MarkDownInput from 'components/MarkdownInput/MarkdownInput';
 import MarkDownHistory from 'components/MarkdownHistory/MarkdownHistory';
+import ClearButton from 'components/ClearButton/ClearButton';
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
           &copy; 2022 Jean-Baptiste VIDAL for THP Developer Winter'22
         </div>
         <div className="app-footer-right">
-          
+          <ClearButton label=">>> Clear your local storage <<<" />
         </div>
       </footer>
     </div>

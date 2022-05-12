@@ -1,0 +1,25 @@
+.clear-button-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  border: 0;
+}
+
+.clear-button {
+  background-color: rgb(255,100,100);
+  color: rgb(255,255,255);
+  margin: 5px;
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px 1px rgba(150,50,50,1);
+}
+
+.new-button:hover {
+  content:"\/\!\\ Clear your local storage \/\!\\";
+  background-color: rgba(150,50,50,1);
+  box-shadow: 2px 3px 4px 1px rgb(255,100,100);
+}
