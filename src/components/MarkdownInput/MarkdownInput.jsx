@@ -15,28 +15,32 @@ const MarkDownInput = (props) => {
     console.log("MarkDownInput says:");
     console.log("  > Trying to add current note to your localStorage");
     
-    let myTmpTitle = (myState.myTitle !== null && myState.myTitle !== undefined) ? myState.myTitle : "<empty title>";
-    let myTmpContent = (myState.myContent !== null && myState.myContent !== undefined) ? myState.myContent : "<empty content>";
+    let myTmpTitle = (myState.myTitle !== "" && myState.myTitle !== null && myState.myTitle !== undefined) ? myState.myTitle : "";
+    let myTmpContent = (myState.myContent !== "" && myState.myContent !== null && myState.myContent !== undefined) ? myState.myContent : "";
     let myCurrentNote = {title: myTmpTitle, content: myTmpContent};
 
-    if (localStorage.getItem('GibbZReactNotepad')) { 
-      let myBackedUpNotes = JSON.parse(localStorage.getItem('GibbZReactNotepad'));
-      console.log("  > localStorage available hence enriching it");
-      myBackedUpNotes.push(myCurrentNote);
-      console.log("  > Current note added to overall backup var");
-      console.log(myBackedUpNotes);
-      let myLocalStorage = JSON.stringify(myBackedUpNotes);
-      console.log("  > Backup var stringified to integrate localStorage");
-      console.log(myLocalStorage);
-      localStorage.setItem('GibbZReactNotepad', myLocalStorage);
+    if (myTmpTitle !== "" && myTmpContent !== "") {
+      if (localStorage.getItem('GibbZReactNotepad')) { 
+        let myBackedUpNotes = JSON.parse(localStorage.getItem('GibbZReactNotepad'));
+        console.log("  > localStorage available hence enriching it");
+        myBackedUpNotes.push(myCurrentNote);
+        console.log("  > Current note added to overall backup var");
+        console.log(myBackedUpNotes);
+        let myLocalStorage = JSON.stringify(myBackedUpNotes);
+        console.log("  > Backup var stringified to integrate localStorage");
+        console.log(myLocalStorage);
+        localStorage.setItem('GibbZReactNotepad', myLocalStorage);
+      } else {
+        console.log("  > localStorage not initialized yet. Working on it!");
+        let myBackedUpNotes = [];
+        myBackedUpNotes.push(myCurrentNote);
+        let myLocalStorage = JSON.stringify(myBackedUpNotes);
+        console.log("  > Backup var stringified as 1st record of new localStorage");
+        console.log(myLocalStorage);
+        localStorage.setItem('GibbZReactNotepad', myLocalStorage);
+      }
     } else {
-      console.log("  > localStorage not initialized yet. Working on it!");
-      let myBackedUpNotes = [];
-      myBackedUpNotes.push(myCurrentNote);
-      let myLocalStorage = JSON.stringify(myBackedUpNotes);
-      console.log("  > Backup var stringified as 1st record of new localStorage");
-      console.log(myLocalStorage);
-      localStorage.setItem('GibbZReactNotepad', myLocalStorage);
+      console.log("  > Save button has been pressed but the note is (partially) empty... No backup then!");
     }
 
   }
@@ -71,7 +75,7 @@ const MarkDownInput = (props) => {
     console.log(myState.myContent);
   }
 
-  // final return of the MarkdownInput component
+  // Final return of the MarkdownInput component
   return (
     <div className="markdown-input-style">
       <form onSubmit={handleSubmit}>
