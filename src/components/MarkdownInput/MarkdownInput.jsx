@@ -3,7 +3,9 @@ import "./MarkDownInput.css";
 
 const MarkDownInput = (props) => {
 
-  const [myState, setState] = useState({myTitle: "", myContent: ""});
+  let myTmpTitleParam = props.titleParam ? props.titleParam : "";
+  let myTmpContentParam = props.contentParam ? props.contentParam : "";
+  const [myState, setState] = useState({myTitle: myTmpTitleParam, myContent: myTmpContentParam});
 
   const handleSubmit = (event) => {
     
@@ -56,6 +58,8 @@ const MarkDownInput = (props) => {
     
     if (event.target.value !== null && event.target.value !== undefined) { 
       setState({myContent: event.target.value, myTitle: myState.myTitle});
+      let myTmpText = myState.myTitle+"\n"+myState.myContent;
+      props.funcParam(myTmpText);
     }
     console.log("MarkDownInput says:");
     console.log("  > Content changed to:");

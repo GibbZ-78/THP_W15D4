@@ -1,23 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from 'assets/logo.svg';
 import './App.css';
 import MarkDownOutput from 'components/MarkdownOutput/MarkDownOutput';
 import MarkDownInput from 'components/MarkdownInput/MarkdownInput';
 import MarkDownHistory from 'components/MarkdownHistory/MarkdownHistory';
 
-// const myNotesList = [
-//   {title: "Note #1",
-//   content: "## Title 2  This is a text containing *italic* and **bold** as well as [hyperlinks](https://devstory.net/12449/html-hyperlink). "},
-//   {title: "Note #2",
-//   content: "## Title 2  This is a text containing *italic* and **bold** as well as [hyperlinks](https://devstory.net/12449/html-hyperlink). "},
-//   {title: "Note #3",
-//   content: "## Title 2  This is a text containing *italic* and **bold** as well as [hyperlinks](https://devstory.net/12449/html-hyperlink). "},
-// ];
-
-// const myStoredNotesList = JSON.stringify(myNotesList);
-// localStorage.setItem('GibbZReactNotepad', myStoredNotesList);
-
 function App() {
+
+  const [appTextParam,setTextParam] = useState("");
+  const [appTitleParam,setTitleParam] = useState("");
+  const [appContentParam,setContentParam] = useState("");
+
   return (
     <div className="app">
       <header className="app-header">
@@ -30,8 +23,8 @@ function App() {
           <MarkDownHistory />
         </div>
         <div className="app-right-column">
-          <MarkDownOutput />
-          <MarkDownInput />
+          <MarkDownOutput textParam={appTextParam} funcParam=""/>
+          <MarkDownInput titleParam={appTitleParam} contentParam={appContentParam} funcParam={setTextParam} />
         </div>
       </main>
       <footer className="app-footer">&copy; 2022 Jean-Baptiste VIDAL for THP Developer Winter'22</footer>
@@ -40,16 +33,3 @@ function App() {
 }
 
 export default App;
-
-
-/* 
-  <img src={logo} className="app-logo" alt="logo" />
-  <a
-    className="app-link"
-    href="https://reactjs.org"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-  Texte du lien
-  </a> 
-*/
