@@ -19,7 +19,7 @@
 }
 
 .clear-button:hover {
-  content: "\/\!\\ Clear your local storage \/\!\\";
+  content: "!!! Clear your local storage !!!";
   background-color: rgba(150,50,50,1);
   box-shadow: 2px 3px 4px 1px rgb(255,100,100);
 }
