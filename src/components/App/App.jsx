@@ -27,7 +27,14 @@ function App() {
           <MarkDownInput titleParam={appTitleParam} contentParam={appContentParam} sendUpwardToOutputViaApp={setTextParam} />
         </div>
       </main>
-      <footer className="app-footer">&copy; 2022 Jean-Baptiste VIDAL for THP Developer Winter'22</footer>
+      <footer className="app-footer">
+        <div className="app-footer-left">
+          &copy; 2022 Jean-Baptiste VIDAL for THP Developer Winter'22
+        </div>
+        <div className="app-footer-right">
+          
+        </div>
+      </footer>
     </div>
   );
 }

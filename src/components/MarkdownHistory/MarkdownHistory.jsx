@@ -6,8 +6,8 @@ import HistoryNotes from 'components/HistoryNotes/HistoryNotes';
 const MarkDownHistory = (props) => {
 
   // Hook-up function to make TITLE and CONTENT bubble-up
-  const sendUpwardTitleAndContentToOutputViaApp = (myTmpTitle, myTmpContent) => {
-    console.log("  > Launching 'sendUpwardTitleAndContentToOutputViaApp'");
+  const sendUpwardTitleAndContentToInputViaApp = (myTmpTitle, myTmpContent) => {
+    console.log("    > Launching 'sendUpwardTitleAndContentToOutputViaApp'");
     props.sendUpwardTitleToInputViaApp(myTmpTitle);
     props.sendUpwardContentToInputViaApp(myTmpContent);
   };
@@ -16,7 +16,7 @@ const MarkDownHistory = (props) => {
   return (
     <div className="markdown-history-style">
       <NewButton label="Create new note (WIP)" />
-      <HistoryNotes upwardHookFunction={sendUpwardTitleAndContentToOutputViaApp}/>
+      <HistoryNotes upwardHookFunction={sendUpwardTitleAndContentToInputViaApp}/>
     </div>
   );
 

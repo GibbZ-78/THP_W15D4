@@ -20,7 +20,8 @@ const HistoryNotes = (props) => {
 
           // Hook-up function to transfer TITLE and CONTENT from HistoryNotes to MarkDownInput
           const handleChooseHistoryNote = () => {
-            console.log("  > History note '"+myNote.title+"("+myIndex+")' has been clicked. Launching 'upwardHookFunction'");
+            console.log("  > History note '"+myNote.title+"("+myIndex+")' has been clicked.");
+            console.log("    > Launching 'upwardHookFunction'.");
             props.upwardHookFunction(myNote.title, myNote.content);
           };
 
