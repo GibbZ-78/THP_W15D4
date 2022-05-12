@@ -8,6 +8,8 @@
   border: 0;
   margin: 0;  
   color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
 }
 
 .app-header {
@@ -15,13 +17,13 @@
   box-sizing: border-box;
   height: 10%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
   font-size: calc(10px + 2vmin);
   font-style:normal;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .app-main {
@@ -34,6 +36,8 @@
   margin: 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .app-left-column {
@@ -43,8 +47,11 @@
   height: 100%;
   border: 0;
   margin-bottom: auto;
+  margin-right: 5px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .app-right-column {
@@ -54,12 +61,19 @@
   height: 100%;
   border: 0;
   margin-bottom: auto;
+  margin-left: 5px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .app-footer {
   background-color: rgb(50,50,50);
+  font-size: 10px;
+  font-style: italic;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
   position: fixed;
   bottom: 0;
   box-sizing: border-box;
@@ -68,11 +82,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
-  font-size: 10px;
-  font-style: italic;
-  font-weight: normal;
-  color: rgb(255, 255, 255);
+  justify-content:flex-start
 }
 
 .app-link {

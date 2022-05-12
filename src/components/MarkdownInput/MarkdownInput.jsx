@@ -28,7 +28,9 @@ const MarkDownInput = (props) => {
       localStorage.setItem('GibbZReactNotepad', myLocalStorage);
     } else {
       console.log("  > localStorage not initialized yet. Working on it!");
-      let myLocalStorage = JSON.stringify([myCurrentNote]);
+      let myBackedUpNotes = [];
+      myBackedUpNotes.push(myCurrentNote);
+      let myLocalStorage = JSON.stringify(myBackedUpNotes);
       console.log("  > Backup var stringified as 1st record of new localStorage");
       console.log(myLocalStorage);
       localStorage.setItem('GibbZReactNotepad', myLocalStorage);
@@ -37,16 +39,26 @@ const MarkDownInput = (props) => {
   }
 
   const handleChangeTitle = (event) => {
-    setState({myTitle: event.target.value});
+    
+    event.preventDefault();
+
+    if (event.target.value !== null && event.target.value !== undefined) {
+      setState({myTitle: event.target.value, myContent: myState.myContent});
+    }
     console.log("MarkDownInput says:");
-    console.log("  > Title changed to :");
+    console.log("  > Title changed to:");
     console.log(myState.myTitle);
   }
 
   const handleChangeContent = (event) => {
-    setState({myContent: event.target.value});
+    
+    event.preventDefault();
+    
+    if (event.target.value !== null && event.target.value !== undefined) { 
+      setState({myContent: event.target.value, myTitle: myState.myTitle});
+    }
     console.log("MarkDownInput says:");
-    console.log("  > Content changed :");
+    console.log("  > Content changed to:");
     console.log(myState.myContent);
   }
 
@@ -54,13 +66,13 @@ const MarkDownInput = (props) => {
     <div className="markdown-input-style">
       <form onSubmit={handleSubmit}>
         <div>
+          <input type="submit" className="markdown-input-submit" value="Save note in localStorage" />
+        </div>
+        <div>
           <input type="text" className="markdown-input-title" minLength="8" maxLength="100" size="100" placeholder="Enter a note title..." value={myState.myTitle} onChange={handleChangeTitle} />
         </div>
         <div>
           <textarea className="markdown-input-content" cols="100" rows="20" placeholder="Type in your note in MD format..." value={myState.myContent} onChange={handleChangeContent}></textarea>
-        </div>
-        <div>
-          <input type="submit" className="markdown-input-submit" value="Save note in localStorage" />
         </div>
       </form>
     </div>
