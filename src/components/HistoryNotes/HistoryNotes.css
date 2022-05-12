@@ -1,0 +1,37 @@
+.history-notes-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 3px;
+  border: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.history-note {
+  background-color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.history-note-title {
+  color: rgb(255,100,100);
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  font-size: large;
+  font-weight: bold;
+}
+
+.history-note-content {
+  font-size: small;
+}
+
+.history-note-not-found {
+  font-size: small;
+  font-style: italic;
+}

@@ -1,6 +1,18 @@
+.new-button-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 3px;
+  border: 0;
+}
+
 .new-button {
-  background-color: rgb(50,50,255);
+  background-color: rgb(255,100,100);
   color: rgb(255,255,255);
-  border: 1px solid rgb(255,255,255);
-  border-radius: 10px;
+  margin: 5px;
+  padding: 5px 20px 5px 20px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 2px 3px 4px 1px rgba(150,50,50,1);
 }

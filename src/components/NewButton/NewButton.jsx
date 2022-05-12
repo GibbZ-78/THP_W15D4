@@ -4,7 +4,7 @@ import "./NewButton.css";
 const NewButton = (props) => {
 
   return (
-    <div>
+    <div className="new-button-container">
       <button className="new-button">{props.label}</button>
     </div>
   );

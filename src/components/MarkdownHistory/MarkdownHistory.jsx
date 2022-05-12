@@ -1,13 +1,14 @@
-import NewButton from 'components/NewButton/NewButton';
 import React from 'react';
 import "./MarkDownHistory.css";
+import NewButton from 'components/NewButton/NewButton';
+import HistoryNotes from 'components/HistoryNotes/HistoryNotes';
 
 const MarkDownHistory = (props) => {
 
   return (
-    <div>
-      <p>Left full-height panel</p>
-      <NewButton label="Add a new note" />
+    <div className="markdown-history-style">
+      <NewButton label="New note" />
+      <HistoryNotes />
     </div>
   );
 

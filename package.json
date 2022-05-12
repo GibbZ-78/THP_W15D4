@@ -2,7 +2,7 @@
   "name": "gibbz-react-notepad",
   "version": "0.1.0",
   "private": true,
-  "author": "GibbZ aka Jean-BAptiste VIDAL",
+  "author": "GibbZ aka Jean-Baptiste VIDAL",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

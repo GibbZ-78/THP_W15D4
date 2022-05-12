@@ -2,8 +2,6 @@ import React from 'react';
 import "./MarkDownOutput.css";
 import Showdown from 'showdown';
 
-const converter = new Showdown.Converter();
-
 const MarkDownOutput = (props) => {
 
   let myMarkdownText = `
@@ -17,8 +15,14 @@ const MarkDownOutput = (props) => {
   and extraordinary emojis :wink:  
   `;
 
+  if (localStorage.getItem('GibbZReactNotepad')) { 
+    let myTmpOutput = JSON.parse(localStorage.getItem('GibbZReactNotepad'));
+    myMarkdownText += myTmpOutput[0].title + " | " + myTmpOutput[0].content;
+  }
+
   const forceHTMLMarkup = (markdownContent) => {
-    return {__html: converter.makeHtml(markdownContent)};
+    const myOutputMDtoHTMLConverter = new Showdown.Converter();
+    return {__html: myOutputMDtoHTMLConverter.makeHtml(markdownContent)};
   };
 
   return (
