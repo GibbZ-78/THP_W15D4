@@ -30,7 +30,7 @@ const HistoryNotes = (props) => {
               <div>
                 <p className="history-note-title">{myNote.title}</p>
               </div>
-              <div className="history-note-content" dangerouslySetInnerHTML={forceHTMLMarkup(myNote.content)}>
+              <div className="history-note-content" dangerouslySetInnerHTML={forceHTMLMarkup(myNote.content.substring(0,120)+"...")}>
               </div>
             </div>
           );

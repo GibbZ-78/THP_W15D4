@@ -8,14 +8,16 @@ const MarkDownHistory = (props) => {
   // Hook-up function to make TITLE and CONTENT bubble-up
   const sendUpwardTitleAndContentToOutputViaApp = (myTmpTitle, myTmpContent) => {
     console.log("  > Launching 'sendUpwardTitleAndContentToOutputViaApp'");
-    props.sendUpwardTitleToOutputViaApp(myTmpTitle);
-    props.sendUpwardContentToOutputViaApp(myTmpContent);
+    console.log(`    > with myTmpTitle = ${myTmpTitle}`);
+    console.log(`    > and myTmpContent = ${myTmpContent}`);
+    props.sendUpwardTitleToInputViaApp(myTmpTitle);
+    props.sendUpwardContentToInputViaApp(myTmpContent);
   };
 
   // Final return of the component
   return (
     <div className="markdown-history-style">
-      <NewButton label="New note" />
+      <NewButton label="Create new note (WIP)" />
       <HistoryNotes upwardHookFunction={sendUpwardTitleAndContentToOutputViaApp}/>
     </div>
   );

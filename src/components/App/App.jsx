@@ -20,7 +20,7 @@ function App() {
       </header>
       <main className="app-main">
         <div className="app-left-column">
-          <MarkDownHistory sendUpwardTitleToOutputViaApp={setTitleParam} sendUpwardContentToOutputViaApp={setContentParam} />
+          <MarkDownHistory sendUpwardTitleToInputViaApp={setTitleParam} sendUpwardContentToInputViaApp={setContentParam} />
         </div>
         <div className="app-right-column">
           <MarkDownOutput textParam={appTextParam} />
